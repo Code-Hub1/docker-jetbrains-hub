@@ -39,6 +39,7 @@ RUN bin/hub.sh configure \
     --temp-dir    $APP_HOME/tmp \
     --listen-port $APP_PORT \
     --base-url    http://hub.code-hub.com/
+    --no-browser
 
 ENTRYPOINT ["bin/hub.sh"]
 CMD ["run"]
