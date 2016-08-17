@@ -3,7 +3,7 @@ FROM esycat/java:oracle-8
 MAINTAINER "Eugene Janusov" <esycat@gmail.com>
 
 ENV APP_VERSION 2.0
-ENV APP_BUILD 182
+ENV APP_BUILD 314
 ENV APP_PORT 8080
 ENV APP_USER hub
 ENV APP_SUFFIX hub
@@ -38,7 +38,7 @@ RUN bin/hub.sh configure \
     --logs-dir    $APP_HOME/log \
     --temp-dir    $APP_HOME/tmp \
     --listen-port $APP_PORT \
-    --base-url    http://localhost/
+    --base-url    http://hub.code-hub.com/
 
 ENTRYPOINT ["bin/hub.sh"]
 CMD ["run"]
