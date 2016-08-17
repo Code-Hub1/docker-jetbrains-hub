@@ -32,14 +32,7 @@ RUN wget -q https://download.jetbrains.com/hub/$APP_VERSION/$APP_DISTFILE && \
 USER $APP_USER
 WORKDIR $APP_DIR
 
-RUN bin/hub.sh configure \
-    --backups-dir $APP_HOME/backups \
-    --data-dir    $APP_HOME/data \
-    --logs-dir    $APP_HOME/log \
-    --temp-dir    $APP_HOME/tmp \
-    --listen-port $APP_PORT \
-    --base-url    http://hub.code-hub.com/
-    --no-browser
+RUN bin/hub.sh start --no-browser
 
 ENTRYPOINT ["bin/hub.sh"]
 CMD ["run"]
